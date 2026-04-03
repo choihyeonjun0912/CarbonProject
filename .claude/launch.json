@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Carbo Project",
+      "runtimeExecutable": "/usr/local/bin/node",
+      "runtimeArgs": ["node_modules/.bin/expo", "start", "--web", "--port", "8081"],
+      "port": 8081
+    }
+  ]
+}

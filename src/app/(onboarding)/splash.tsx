@@ -1,23 +1,15 @@
-import { Redirect } from 'expo-router';
-import { useTreeStore } from '@/store/useTreeStore';
 import { View, Text, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button } from '@/components/Button';
 import { colors, typography, spacing } from '@/constants/tokens';
 
-export default function Index() {
+export default function SplashScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
-  const isOnboarded = useTreeStore((s) => s.isOnboarded);
-
-  if (isOnboarded) {
-    return <Redirect href="/(main)" />;
-  }
 
   return (
     <View style={[styles.container, { paddingBottom: insets.bottom + spacing.xxl }]}>
-      {/* Background glow effects */}
       <View style={styles.glowTopRight} />
       <View style={styles.glowBottomLeft} />
 
@@ -25,7 +17,6 @@ export default function Index() {
         <View style={styles.iconOuter}>
           <Text style={styles.emoji}>🌲</Text>
         </View>
-
         <View style={styles.textBlock}>
           <Text style={styles.title}>
             내가 심은 나무가{'\n'}매일 일합니다.
